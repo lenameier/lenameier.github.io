@@ -7,13 +7,61 @@
 	<title></title>
 </head>
 
-<body>
+<!-- <body>
     <header>
-	    <h1>Projekt 1</h1>
+	    <h1>Fat Me</h1>
     </header>
 	<main>
-        <p>Content 1 Test</p>
+        <p><img src="/assets/img/titelbild_fatme.jpg" alt=""></p>
+<p>Mit der Serie habe ich einen Weg gefunden, mich und meinen Körper in einem anderen Licht zu sehen und einen neuen Zugang zu meinen Gefühlen und Erfahrungen zu finden, die mich bisher im Leben als dicke Frau begleitet haben.</p>
+<p>Ich bin in einer ländlichen Gegend aufgewachsen und war lange dem Trugschluss, einer gesellschaftlichen Norm entsprechen zu müssen, ausgesetzt. Schon früh habe ich gelernt, eine Fassade aufzubauen, an der die Worte aus Sicht der Außenwelt nur abprallten. Doch eigentlich war diese Fassade ein Schwamm, der alles aufsog und sich erst dann entleerte, wenn die Tür hinter mir zu ging. Ständig flossen die Tränen, wenn ich alleine war, sodass ein Loch aus Leere und Frust entstand. Ich musste oft die Erfahrung machen, dass ich nicht genug bin - dass ich zu viel bin.</p>
+<p>Trotz perfektionierter „Fassade“ überrollten mich Selbstzweifel und bis mir bewusst wurde, dass ich nicht in die Norm passen muss war es ein langer Weg.
+Ich fing an meinen Körper zu akzeptieren und respektieren, entwickelte ein stärkeres Selbstbewusstsein. Seitdem genieße immer öfter das Gefühl von Wertschätzung.</p>
 
     </main>
+</body> -->
+
+
+<body>
+    <!-- Container für den scrollbaren Bereich -->
+    <div class="scroll-container">
+        <!-- Verschiedene Abschnitte der Landingpage -->
+        <section class="hero">
+            <h1>Fat Me</h1>
+            
+        </section>
+        <section>
+            <p><img src="/assets/img/titelbild_fatme.jpg" alt=""></p>
+<p>Mit der Serie habe ich einen Weg gefunden, mich und meinen Körper in einem anderen Licht zu sehen und einen neuen Zugang zu meinen Gefühlen und Erfahrungen zu finden, die mich bisher im Leben als dicke Frau begleitet haben.</p>
+<p>Ich bin in einer ländlichen Gegend aufgewachsen und war lange dem Trugschluss, einer gesellschaftlichen Norm entsprechen zu müssen, ausgesetzt. Schon früh habe ich gelernt, eine Fassade aufzubauen, an der die Worte aus Sicht der Außenwelt nur abprallten. Doch eigentlich war diese Fassade ein Schwamm, der alles aufsog und sich erst dann entleerte, wenn die Tür hinter mir zu ging. Ständig flossen die Tränen, wenn ich alleine war, sodass ein Loch aus Leere und Frust entstand. Ich musste oft die Erfahrung machen, dass ich nicht genug bin - dass ich zu viel bin.</p>
+<p>Trotz perfektionierter „Fassade“ überrollten mich Selbstzweifel und bis mir bewusst wurde, dass ich nicht in die Norm passen muss war es ein langer Weg.
+Ich fing an meinen Körper zu akzeptieren und respektieren, entwickelte ein stärkeres Selbstbewusstsein. Seitdem genieße immer öfter das Gefühl von Wertschätzung.</p>
+
+            <div class="box1">Lena</div>
+            <div class="box2">Ivan</div>
+            
+        </section>
+
+        <script>
+            // Scrollt zur Mitte der scrollbaren Fläche beim Laden der Seite
+            window.onload = function () {
+                const containerWidth = document.documentElement.scrollWidth;
+                const containerHeight = document.documentElement.scrollHeight;
+    
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+    
+                const centerX = (containerWidth - viewportWidth) / 2;
+                const centerY = (containerHeight - viewportHeight) / 2;
+    
+                // Scroll zur berechneten Mitte
+                window.scrollTo(centerX, centerY);
+            };
+        </script>
+
+      
+
+    </div>
 </body>
+
 </html>

@@ -1,0 +1,71 @@
+/* Basis-Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-family: 'Lausanne-300';
+	src: url("/assets/fonts/Lausanne-300.otf");
+}
+
+/* Scroll-Container mit echtem Schachbrettmuster */
+.scroll-container {
+    width: 5000px; /* Breite des Viewports */
+    height: 5000px; /* Höhe des Viewports */
+    background-color: white;
+    background-image: url("/assets/img/Schachbrettmuster.png");
+	background-repeat: repeat;
+    background-size: 900px 900px; /* Kacheln sind 100x100 Pixel */
+}
+
+
+/* Hero-Abschnitt */
+.hero {
+	font-size: 30pt;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 70px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Inhalt-Boxen */
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-image: url(/assets/img/titelbild_fatme.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    background-image: url(/assets/img/titelbild_ivan.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

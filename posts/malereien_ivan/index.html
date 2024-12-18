@@ -7,13 +7,53 @@
 	<title></title>
 </head>
 
-<body>
+<!-- <body>
     <header>
 	    <h1>Projekt 2</h1>
     </header>
 	<main>
-        <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
     </main>
+</body> -->
+
+
+<body>
+    <!-- Container für den scrollbaren Bereich -->
+    <div class="scroll-container">
+        <!-- Verschiedene Abschnitte der Landingpage -->
+        <section class="hero">
+            <h1>Projekt 2</h1>
+            
+        </section>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            <div class="box1">Lena</div>
+            <div class="box2">Ivan</div>
+            
+        </section>
+
+        <script>
+            // Scrollt zur Mitte der scrollbaren Fläche beim Laden der Seite
+            window.onload = function () {
+                const containerWidth = document.documentElement.scrollWidth;
+                const containerHeight = document.documentElement.scrollHeight;
+    
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+    
+                const centerX = (containerWidth - viewportWidth) / 2;
+                const centerY = (containerHeight - viewportHeight) / 2;
+    
+                // Scroll zur berechneten Mitte
+                window.scrollTo(centerX, centerY);
+            };
+        </script>
+
+      
+
+    </div>
 </body>
+
 </html>
