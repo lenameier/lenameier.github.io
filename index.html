@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
+    <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,95 +16,103 @@
         
 </br> 
 
-<div class="box1">
+<div style="background-image: url(/assets/img/titelbild_fatme.jpg);
+" class="box1">
     <h2></h2>
     <h2><a href="/posts/projekt-fat_me/">Fat Me</a></h2>
     <h3>Lena Meier</h3>
 </div>
+
 </br> 
 </br> 
 
-<div class="box1">
-    <h2>/assets/img/titelbild_ivan.png</h2>
-    <h2><a href="/posts/malereien_ivan/">Projekt 2</a></h2>
+<div style="background-image: url(/assets/img/titelbild_ivan.png);
+" class="box1">
+    <h2></h2>
+    <h2><a href="/posts/malereien_ivan/">Malereien</a></h2>
     <h3>Ivan</h3>
 </div>
+
 </br> 
 </br> 
 
-<div class="box1">
+<div style="background-image: url(/assets/img/titelbild_telke.png);
+" class="box1">
     <h2></h2>
-    <h2><a href="/posts/post-3/">Test</a></h2>
-    <h3></h3>
+    <h2><a href="/posts/fotografien_telke/">Fotoserie</a></h2>
+    <h3>Telke</h3>
 </div>
+
 </br> 
 </br> 
+
+
 
     </main>
 </body> -->
 
 
 <body>
-    <!-- Container für den scrollbaren Bereich -->
+   
     <div class="scroll-container">
-        <!-- Verschiedene Abschnitte der Landingpage -->
-        <section class="hero">
-            <h1>Projektname</h1>
+        <a id="center-anchor"></a>
             
-        </section>
-        <section>
-            
+            <div class="centered-heading">
+                <h1>Körperbilder</h1>   
+            </div>
+
+            <script src="script.js"></script>
+
+            <section>
+                
 </br> 
 
-<div class="box1">
+<div style="background-image: url(/assets/img/titelbild_fatme.jpg);
+" class="box1">
     <h2></h2>
     <h2><a href="/posts/projekt-fat_me/">Fat Me</a></h2>
     <h3>Lena Meier</h3>
 </div>
+
 </br> 
 </br> 
 
-<div class="box1">
-    <h2>/assets/img/titelbild_ivan.png</h2>
-    <h2><a href="/posts/malereien_ivan/">Projekt 2</a></h2>
+<div style="background-image: url(/assets/img/titelbild_ivan.png);
+" class="box1">
+    <h2></h2>
+    <h2><a href="/posts/malereien_ivan/">Malereien</a></h2>
     <h3>Ivan</h3>
 </div>
+
 </br> 
 </br> 
 
-<div class="box1">
+<div style="background-image: url(/assets/img/titelbild_telke.png);
+" class="box1">
     <h2></h2>
-    <h2><a href="/posts/post-3/">Test</a></h2>
-    <h3></h3>
+    <h2><a href="/posts/fotografien_telke/">Fotoserie</a></h2>
+    <h3>Telke</h3>
 </div>
+
 </br> 
 </br> 
 
-            <div class="box1">Lena</div>
-            <div class="box2">Ivan</div>
-            
-        </section>
 
-        <script>
-            // Scrollt zur Mitte der scrollbaren Fläche beim Laden der Seite
-            window.onload = function () {
-                const containerWidth = document.documentElement.scrollWidth;
-                const containerHeight = document.documentElement.scrollHeight;
-    
-                const viewportWidth = window.innerWidth;
-                const viewportHeight = window.innerHeight;
-    
-                const centerX = (containerWidth - viewportWidth) / 2;
-                const centerY = (containerHeight - viewportHeight) / 2;
-    
-                // Scroll zur berechneten Mitte
-                window.scrollTo(centerX, centerY);
-            };
-        </script>
 
-      
+            </section>
+
+
 
     </div>
+
+    <script>
+        window.onload = function() {
+          location.hash = "center-anchor";
+        };
+      </script>
+
+      
 </body>
+
 
 </html>
