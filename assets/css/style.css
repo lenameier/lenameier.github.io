@@ -9,18 +9,13 @@ html, body {
 }
 
 .scroll-container {
+    position: relative;
     display: block;
-    grid-template-columns: 600px 600px 600px 600px 600px 600px;
-    grid-template-rows: 600px 600px 600px 600px 600px 600px;
     width: 3000px;
     height: 3000px; 
     overflow: auto; 
-    background: radial-gradient(circle, #e66465, #9198e5);
-    background-image: url(/assets/img/rahmen_6px_white.png), radial-gradient(circle, #e66465, #9198e5);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
+    background: rgb(255, 255, 255);
+    border: solid;
   }
 
 
@@ -38,13 +33,70 @@ html, body {
     border-color: rgb(111, 255, 113);
     border-style: solid;
     border-width: 10px;
-    z-index: 1000;
+    z-index: 3;
   }
 
 h2{
   font-size: 20pt;
   margin: 50px;
   color: black;
+}
+
+
+.flex-container{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.item{
+  border: solid;
+  border-width: 5px;
+  border-color: #000000;
+  font-size: 20pt;
+}
+
+.item-1{
+  width: 1080px;
+  height: 608px;
+  flex-shrink: 0;
+}
+
+.item-2{
+  width: 1080px;
+  height: 1080px;
+  flex-shrink: 0;
+}
+
+.item-3{
+  width: 1080px;
+  height: 1350px;
+  flex-shrink: 0;
+}
+
+.item-4{
+  width: 1080px;
+  height: 1920px;
+  flex-shrink: 0;
+}
+
+
+.grid-container{
+  position: absolute;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 600px 600px 600px 600px 600px 600px;
+  grid-template-rows: 600px 600px 600px 600px 600px 600px;
+  z-index: 6;
+
 }
 
 .box1 {
@@ -57,6 +109,30 @@ h2{
     font-size: 50pt;
     color: rgb(111, 255, 113); 
     text-align: center;
+}
+
+.box2 {
+  width: 250px;
+  height: 320px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  margin: 0px;
+  font-size: 50pt;
+  color: rgb(111, 255, 113); 
+  text-align: center;
+}
+
+.box3 {
+  width: 300px;
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  margin: 0px;
+  font-size: 50pt;
+  color: rgb(111, 255, 113); 
+  text-align: center;
 }
 
 main{
