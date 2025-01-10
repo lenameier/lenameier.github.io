@@ -1,4 +1,4 @@
-/* Basis-Styling */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -6,27 +6,23 @@ html, body {
     height: 100%;
     overflow: auto;
     font-family: 'SpaceGrotesk';
-	src: url("/assets/fonts/SpaceGrotesk-Medium.otf");
 }
 
 .scroll-container {
     display: block;
+    grid-template-columns: 600px 600px 600px 600px 600px 600px;
+    grid-template-rows: 600px 600px 600px 600px 600px 600px;
     width: 3000px;
     height: 3000px; 
     overflow: auto; 
-    background-image: url(/assets/img/background_2.png);
-    background-size: cover;
+    background: radial-gradient(circle, #e66465, #9198e5);
+    background-image: url(/assets/img/rahmen_6px_white.png), radial-gradient(circle, #e66465, #9198e5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     position: relative;
   }
 
-  /* #center-anchor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-  } */
 
   .centered-heading {
     position: absolute;
@@ -35,43 +31,36 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 4rem; 
-    color: rgb(64, 118, 110);
+    color: rgb(111, 255, 113);
     width: 1400px;
     height: 780px;
-    background-color: rgb(255, 255, 255);
-    border-color: black;
+    background-image: radial-gradient(#9198e5ab #e66464);
+    border-color: rgb(111, 255, 113);
     border-style: solid;
+    border-width: 10px;
     z-index: 1000;
   }
 
+h2{
+  font-size: 20pt;
+  margin: 50px;
+  color: black;
+}
 
-/* Inhalt-Boxen */
 .box1 {
-    width: 200px;
-    height: 200px;
+    width: 440px;
+    height: 300px;
 	  background-size: cover;
 	  background-repeat: no-repeat;
     color: #fff;
-    margin:10px;
-    font-size: 20pt;
+    margin: 0px;
+    font-size: 50pt;
+    color: rgb(111, 255, 113); 
     text-align: center;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.grid{
-  display: grid; 
-  grid-template-columns: 600px 600px 600px 600px 600px;
-  grid-template-rows: 600px 600px 600px 600px 600px;
-   
-}
-
-p{
-  width: 100px;
-  height: auto;
+main{
+    margin: 0;
 }
 
 
-
-.page-fotografien {
-  background-color: #f0f0f0;
-}

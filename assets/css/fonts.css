@@ -1,6 +1,21 @@
+/* @font-face {
+  font-family: Lausanne;
+  src:url(../fonts/Lausanne-300.otf) format("otf");
+  font-weight:200;
+  font-style:normal;
+} */
+
 @font-face {
   font-family: SpaceGrotesk;
   src:url(../fonts/SpaceGrotesk-Bold.woff2) format("woff2");
   font-weight:200;
   font-style:normal;
 }
+
+
+/* @font-face {
+  font-family: Calven;
+  src:url(../fonts/claven.otf) format("otf");
+  font-weight:200;
+  font-style:normal;
+} */
