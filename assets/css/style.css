@@ -1,11 +1,13 @@
 
 html, body {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    font-family: 'SpaceGrotesk';
+    font-family: 'SangBleuEmpire';
 }
 
 .scroll-container {
@@ -21,39 +23,34 @@ html, body {
 
   .centered-heading {
     position: absolute;
-    text-align: center;
+    text-align: left;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4rem; 
-    color: rgb(111, 255, 113);
+    font-size: 3rem; 
+    color: rgb(0, 0, 0);
     width: 1400px;
     height: 780px;
     background-image: radial-gradient(#9198e5ab #e66464);
-    border-color: rgb(111, 255, 113);
-    border-style: solid;
-    border-width: 10px;
-    z-index: 3;
+    z-index: 5;
   }
 
 h2{
   font-size: 20pt;
-  margin: 50px;
+  margin: 0px;
   color: black;
 }
 
 
-.flex-container{
-  display: flex;
+.grid-container{
   position: absolute;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  display: grid;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  grid-template-columns: 500px 500px 500px 500px 500px 500px 500px 500px;
+  grid-template-rows: 500px 500px 500px 500px 500px 500px 500px 500px;
+  z-index: 2;
+
 }
 
 .item{
@@ -66,77 +63,165 @@ h2{
 .item-1{
   width: 1080px;
   height: 608px;
-  flex-shrink: 0;
+  grid-column: 6 / 9;
+  grid-row: 2 / 4;
+
+
 }
 
 .item-2{
   width: 1080px;
   height: 1080px;
-  flex-shrink: 0;
+  grid-column: 1 / 9;
+  grid-row: 5 / 9;
+  
 }
 
 .item-3{
   width: 1080px;
   height: 1350px;
-  flex-shrink: 0;
+  grid-column: 3 / 5;
+  grid-row: 4 / 7;
+  
 }
 
 .item-4{
   width: 1080px;
   height: 1920px;
-  flex-shrink: 0;
+  grid-column: 7 / 9;
+  grid-row: 4 / 9;
+  
 }
 
 
-.grid-container{
-  position: absolute;
-  display: grid;
+.flex-container{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
-  grid-template-columns: 600px 600px 600px 600px 600px 600px;
-  grid-template-rows: 600px 600px 600px 600px 600px 600px;
-  z-index: 6;
+  z-index: 2;
+  justify-content: space-evenly;
+  
 
 }
 
+
+
 .box1 {
-    width: 440px;
-    height: 300px;
+    position: absolute;
+    width: 10cm;
+    height: 10cm;
 	  background-size: cover;
 	  background-repeat: no-repeat;
-    color: #fff;
     margin: 0px;
     font-size: 50pt;
-    color: rgb(111, 255, 113); 
+    color: rgb(0, 0, 0); 
     text-align: center;
+  
 }
 
 .box2 {
-  width: 250px;
-  height: 320px;
+  position: absolute;
+  width: 10cm;
+  height: 12cm;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
   margin: 0px;
   font-size: 50pt;
-  color: rgb(111, 255, 113); 
+  color: rgb(0, 0, 0); 
   text-align: center;
 }
 
 .box3 {
-  width: 300px;
-  height: 450px;
+  position: absolute;
+  width: 10cm;
+  height: 15cm;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
   margin: 0px;
   font-size: 50pt;
-  color: rgb(111, 255, 113); 
+  color: rgb(0, 0, 0); 
   text-align: center;
 }
 
-main{
-    margin: 0;
+
+.box4 {
+  position: absolute;
+  width: 10cm;
+  height: 12cm;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0px;
+  font-size: 50pt;
+  color: rgb(0, 0, 0); 
+  text-align: center;
+}
+
+.box5 {
+  
+  width: 10cm;
+  height: 10cm;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0px;
+  font-size: 50pt;
+  color: rgb(0, 0, 0); 
+  text-align: center;
+}
+
+/* Info-Overlay */
+.box1 h2, .box1 h3,
+.box2 h2, .box2 h3,
+.box3 h2, .box3 h3,
+.box4 h2, .box4 h3,
+.box5 h2, .box5 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  opacity: 0; /* Unsichtbar standardmäßig */
+  text-align: center;
+  transition: opacity 0.5s ease, 
+              transform 0.5s ease; /* sanfte Bewegung */
+}
+
+/* Hover-Effekt: Zeige Titel und Namen */
+.box1:hover h2, .box1:hover h3,
+.box2:hover h2, .box2:hover h3,
+.box3:hover h2, .box3:hover h3,
+.box4:hover h2, .box4:hover h3,
+.box5:hover h2, .box5:hover h3 {
+  opacity: 1;
+  transform: translate(-50%, -40%);
+}
+
+/* Optional: Verdunkle Hintergrund beim Hover */
+.box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Etwas sanftere Verdunkelung */
+  background-blend-mode: multiply; /* Mischung mit dem Bild */
+  transition: background-color 0.5s ease; /* Sanfter Übergang der Verdunkelung */
+}
+
+
+/* Stil für den Titel (h2) */
+.box1 h2, .box2 h2, .box3 h2, .box4 h2, .box5 h2 {
+  top: 20%; /* Positioniere den Titel etwas höher */
+  font-size: 50px; /* Passe die Schriftgröße an */
+  font-weight: bold; /* Mach den Titel fett */
+}
+
+/* Stil für den Namen (h3) */
+.box1 h3, .box2 h3, .box3 h3, .box4 h3, .box5 h3 {
+  top: 60%; /* Positioniere den Namen etwas tiefer */
+  font-size: 16px; /* Kleinere Schrift für den Namen */
+  font-weight: normal; /* Name bleibt regulär */
 }
 
 

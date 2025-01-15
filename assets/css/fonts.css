@@ -1,9 +1,12 @@
-/* @font-face {
-  font-family: Lausanne;
-  src:url(../fonts/Lausanne-300.otf) format("otf");
-  font-weight:200;
-  font-style:normal;
-} */
+
+@font-face {
+  font-family: "SangBleuEmpire";
+  src:url(/assets/fonts/SangBleuEmpire/SangBleuEmpire-Regular.woff2) format("woff2");
+  font-style: normal;
+}
+
+
+
 
 @font-face {
   font-family: SpaceGrotesk;
@@ -13,9 +16,4 @@
 }
 
 
-/* @font-face {
-  font-family: Calven;
-  src:url(../fonts/claven.otf) format("otf");
-  font-weight:200;
-  font-style:normal;
-} */
+
