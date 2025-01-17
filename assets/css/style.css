@@ -1,44 +1,89 @@
 
 html, body {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    font-family: 'SangBleuEmpire';
+    width: 2400px;
+    height: 1200px;
+    overflow:auto;
+    
 }
 
 .scroll-container {
     position: relative;
     display: block;
-    width: 3000px;
-    height: 3000px; 
+    width: 2400px;
+    height: 1200px; 
     overflow: auto; 
     background: rgb(255, 255, 255);
-    border: solid;
+    
   }
 
 
   .centered-heading {
     position: absolute;
     text-align: left;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem; 
+    width: 1000px;
+    height: 600px;
     color: rgb(0, 0, 0);
-    width: 1400px;
-    height: 780px;
-    background-image: radial-gradient(#9198e5ab #e66464);
     z-index: 5;
   }
 
-h2{
-  font-size: 20pt;
+.normal h1{
+  font-size: 78pt;
   margin: 0px;
   color: black;
+  font-family: ClashDisplay-Medium;
+  z-index: 5;
+
+}
+
+.hover-effect {
+  white-space: nowrap; /* Verhindert den Umbruch */
+}
+
+.hover-effect span {
+  display: inline-block; /* Damit die Spiegelung korrekt funktioniert */
+  font-size: 78pt; /* Gleiche Schriftgröße wie der normale Text */
+  transition: transform 0.5s ease; /* Sanfte Übergänge */
+  display: inline-block; /* Beibehaltung der Block-Transformation */
+  margin-right: -2px;
+  
+}
+
+.hover-effect:hover span {
+  transform: scaleX(-1); /* Spiegelt die Buchstaben beim Hover */
+}
+
+
+
+
+h1{
+
+  font-size: 78pt;
+  margin: 0px;
+  color: black;
+  font-family: ClashDisplay-Medium;
+}
+
+h2{
+  grid-column: 2 / 3 ;
+  grid-row: 2 / 3 ;
+  font-size: 15pt;
+  margin: 0px;
+  color: black;
+  font-family: SangBleuSunrise;
+  /* border: solid;
+  border-width: 5px;
+  border-color: #f2f2f2;
+  width: 600px;
+  height: 600px; */
+}
+
+.title{
+  font-family: ClashDisplay-Medium;
+  font-size: 50pt;
 }
 
 
@@ -47,8 +92,9 @@ h2{
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: 500px 500px 500px 500px 500px 500px 500px 500px;
-  grid-template-rows: 500px 500px 500px 500px 500px 500px 500px 500px;
+  grid-template-columns: 600px 600px 600px 600px;
+  grid-template-rows: 600px 600px;
+  grid-gap: 20px;
   z-index: 2;
 
 }
@@ -56,41 +102,9 @@ h2{
 .item{
   border: solid;
   border-width: 5px;
-  border-color: #000000;
-  font-size: 20pt;
-}
-
-.item-1{
-  width: 1080px;
-  height: 608px;
-  grid-column: 6 / 9;
-  grid-row: 2 / 4;
-
-
-}
-
-.item-2{
-  width: 1080px;
-  height: 1080px;
-  grid-column: 1 / 9;
-  grid-row: 5 / 9;
-  
-}
-
-.item-3{
-  width: 1080px;
-  height: 1350px;
-  grid-column: 3 / 5;
-  grid-row: 4 / 7;
-  
-}
-
-.item-4{
-  width: 1080px;
-  height: 1920px;
-  grid-column: 7 / 9;
-  grid-row: 4 / 9;
-  
+  border-color: #f2f2f2;
+  width: 600px;
+  height: 600px;
 }
 
 
@@ -224,4 +238,32 @@ h2{
   font-weight: normal; /* Name bleibt regulär */
 }
 
+
+.post {
+width: 1080px;
+height: 3000px;
+position: absolute;
+}
+
+
+.image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+img{
+
+  width: 200px;
+  height: auto;
+  
+
+}
+
+.info{
+display: block;
+font-family: SangBleuEmpire;
+font-size: 15pt;
+}
 
