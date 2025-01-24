@@ -16,14 +16,21 @@
             <main>
                 <div class="scroll-container">
 <div class="centered-heading">
-   <h1>
+   <h1 id="headline">
   <span class="normal">Körper:</span>
   <span class="hover-effect">
-    <span>B</span><span>i</span><span>l</span><span>d</span><span>e</span><span>r</span>
+  <span>B</span><span>i</span><span>l</span><span>d</span><span>e</span><span>r</span>
   </span>
 </h1>
 </div>
-<div class="grid-container">
+<div class="box-container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"><h3 class="pitch">Eine Plattform zu Projekten über Körperbilder</h3></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item item-1"><h2>Diese Plattform befasst sich intensiv mit der Stigmatisierung von Körperbildern. Im Mittelpunkt stehen Themen wie Gewichtsstörungen, die Wahrnehmung und das Wohlbefinden im eigenen Körper, der Umgang mit Essstörungen sowie der Einfluss von Werbung und Social Media auf unser Selbstbild. Dabei geht es darum, gesellschaftliche Normen zu hinterfragen und die Erfahrungen von Menschen sichtbar zu machen, die aus dem Rahmen fallen. Auf der Plattform werden künstlerische und kritische Projekte präsentiert, die diese Themen beleuchten und damit verbundene Gefühle und Perspektiven zum Ausdruck bringen. Sie bietet zudem eine Möglichkeit für Austausch und Kontaktaufnahme, um einen Dialog über diese wichtigen Fragestellungen anzustoßen.</h2></div>
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -31,8 +38,23 @@
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
-<p><h2>Seit einiger Zeit beschäftige ich mich mit Themen rund um die Stigmatisierung von Körperbildern durch Gewichtsstörungen, Wahrnehmung und Wohlbefinden im eigenen Körper, Herausforderungen einer Essstörung, dem Einfluss auf unser Selbstbild durch Werbung und Social Media und ähnlichen Themen. Es geht im wesentlichen darum, gesellschaftlich aus dem Rahmen zu fallen. Auf dieser Plattform findest du Projekte die diese Themen künstlerisch und kritisch beleuchten und damit verbundene Gefühle zum Ausdruck bringen. Zudem bietet die Plattform eine Möglichkeit zu Kontaktaktaufnahme und Austausch.</h2></p>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
 </div>
+<div class="text-grid">
+</div>
+<!-- Reload Button -->
+  <div class="reload-button" onclick="reloadPage()"></div>
+  <script>
+    // Funktion, um die Seite neu zu laden
+    function reloadPage() {
+      location.reload();
+    }
+  </script>
 <div class="flex-container">
   <a href="/posts/projekt-fat_me/">
     <div 
@@ -83,41 +105,63 @@
 <p></div>
 </a></p>
 </div>
-<script>
-  // Funktion zum Mischen eines Arrays (Fisher-Yates Shuffle)
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
+<!-- SortableJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Zufälligen Schriftschnitt für die Headline auswählen
+      const fontClasses = ["font1", "font2", "font3", "font4", "font5", "font6"];
+      const randomClass = fontClasses[Math.floor(Math.random() * fontClasses.length)];
+      const headline = document.getElementById("headline");
+      headline.classList.add(randomClass);
 
-  // Randomisiere die Reihenfolge und positioniere die Elemente
-  document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector('.flex-container');
-    const elements = Array.from(container.children);
+      // Flex-Container und Elemente auswählen
+      const container = document.querySelector(".flex-container");
+      const elements = Array.from(container.children);
 
-    // Mische die Elemente
-    shuffle(elements);
+      // Funktion zum Mischen eines Arrays
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
 
-    // Lösche alle Kinder und füge sie in neuer Reihenfolge hinzu
-    container.innerHTML = '';
-    elements.forEach(el => {
-      // Zufällige X- und Y-Koordinaten generieren
-      const randomX = Math.random() * 90; // Prozentuale Breite (0–90%)
-      const randomY = Math.random() * 90; // Prozentuale Höhe (0–90%)
+      // Elemente zufällig anordnen
+      shuffle(elements);
+      container.innerHTML = ""; // Entferne alle Kinder
+      elements.forEach((el) => {
+        const randomX = Math.random() * 90;
+        const randomY = Math.random() * 90;
+        el.style.position = "absolute";
+        el.style.left = `${randomX}%`;
+        el.style.top = `${randomY}%`;
+        container.appendChild(el); // Füge das Element wieder in den Container ein
+      });
 
-      // Setze Positionierung mit CSS
-      el.style.position = 'absolute'; // Absolutpositionierung sicherstellen
-      el.style.left = `${randomX}%`;   // Zufällige X-Position
-      el.style.top = `${randomY}%`;    // Zufällige Y-Position
+      // Drag-and-Drop aktivieren mit Sortable.js
+      const sortable = new Sortable(container, {
+        animation: 150, // Sanfte Animation beim Ziehen
+        ghostClass: "sortable-ghost", // Klasse für das gezogene Element
+        onEnd: (event) => {
+          // Aktualisiere die Position des Elements nach Drag-and-Drop
+          const item = event.item;
+          const rect = item.getBoundingClientRect();
 
-      // Füge das Element wieder in den Container ein
-      container.appendChild(el);
+          // Speichere die neue Position in Inline-Stilen
+          const containerRect = container.getBoundingClientRect();
+          item.style.left = `${rect.left - containerRect.left}px`;
+          item.style.top = `${rect.top - containerRect.top}px`;
+        },
+      });
     });
-  });
-</script>
 
+    // Funktion zum Neuladen der Seite
+    function reloadPage() {
+      location.reload();
+    }
+  </script>
             </main>
 
     </div>

@@ -3,48 +3,40 @@ html, body {
    
     margin: 0;
     padding: 0;
-    width: 2400px;
-    height: 1400px;
-    overflow:auto;
-    
+    width: 100vw;
+    height: 100vh;
+    overflow: scrcoll;
+
 }
 
 .scroll-container {
     position: absolute;
     display: block;
-    width: 2400px;
-    height: 1200px; 
+    width: 180vw;
+    height: 240vh; 
     overflow: auto; 
     background: rgb(255, 255, 255);
+    margin: 10px;
     
   }
 
-
-  .centered-heading {
-    position: absolute;
-    text-align: left;
-    width: 1000px;
-    height: 600px;
-    color: rgb(0, 0, 0);
-    z-index: 5;
-  }
 
 .normal h1{
   font-size: 78pt;
   margin: 0px;
   color: black;
   font-family: ClashDisplay-Medium;
-  z-index: 5;
+  z-index: 3;
 
 }
 
 .hover-effect {
-  white-space: nowrap; /* Verhindert den Umbruch */
+  white-space: nowrap;
 }
 
 .hover-effect span {
   display: inline-block; /* Damit die Spiegelung korrekt funktioniert */
-  font-size: 78pt; /* Gleiche Schriftgröße wie der normale Text */
+  font-size: 116pt; /* Gleiche Schriftgröße wie der normale Text */
   transition: transform 0.5s ease; /* Sanfte Übergänge */
   display: inline-block; /* Beibehaltung der Block-Transformation */
   margin-right: -2px;
@@ -57,56 +49,116 @@ html, body {
 
 
 
-
 h1{
   position: fixed;
-  font-size: 82pt;
-  margin-left: 17px;
+  font-size: 116pt;
+  margin-left: 35px;
   margin-top: 0px;
   color: black;
   font-family: ClashDisplay-Medium;
 }
 
 h2{
-  grid-column: 2 / 3 ;
-  grid-row: 2 / 3 ;
-  font-size: 15pt;
+  /* beschreibungstext auf der Startseite und den Subpages */
+  font-size: 18pt;
   margin: 0px;
   color: black;
-  font-family: SangBleuSunrise;
-  /* border: solid;
-  border-width: 5px;
-  border-color: #f2f2f2;
-  width: 600px;
-  height: 600px; */
+  font-family: 'Zodiak-Light';
+
+}
+
+h3{
+  
+  font-size: 22pt;
+  margin: 0px;
+  color: black;
+  font-family: 'ClashDisplay-Medium';
+
+}
+
+
+.pitch{
+  color: rgb(193, 193, 193);
+  margin-left: -200px;
+  margin-top: 300px;
+  font-size: 28pt;
+  font-family: ClashDisplay-Medium;
+  justify-content: center;
+  
 }
 
 .title{
   
-  font-family: ClashDisplay-Medium;
-  font-size: 50pt;
+  font-family: ClashDisplay-Medium; /*schriftgröße der Schrift auf den Bildern der Titelseite*/
+  font-size: 30pt;
 }
 
+.font1 {
+  font-family: "ClashDisplay-Extralight";
+  z-index: 2;
+}
 
-.grid-container{
+.font2 {
+  font-family: "ClashDisplay-Light";
+  z-index: 2;
+
+}
+
+.font3 {
+  font-family: "ClashDisplay-Regular";
+  z-index: 2;
+}
+
+.font4 {
+  font-family: "ClashDisplay-Medium";
+  z-index: 2;
+}
+
+.font5 {
+  font-family: "ClashDisplay-SemiBold";
+  z-index: 2;
+}
+
+.font6 {
+  font-family: "ClashDisplay-Bold";
+  z-index: 2;
+}
+
+.box-container{
   position: absolute;
-  display: grid;
+  display: flex;
   margin: 10px;
   width: 100%;
   height: 100%;
-  grid-template-columns: 600px 600px 600px 600px;
-  grid-template-rows: 600px 600px;
-  grid-gap: 20px;
-  z-index: 2;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: baseline;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  z-index: 0;
 
 }
 
 .item{
   border: solid;
-  border-width: 5px;
-  border-color: #f2f2f2;
-  width: 600px;
-  height: 600px;
+  border-width: 6px;
+  border-color: #f7f7f7;
+  width: 750px;
+  height: 750px;
+}
+
+.item-1{
+  border: solid;
+  border-width: 6px;
+  border-color: #ffffff;
+  width: 750px;
+  height: 750px;
+}
+
+.item-1:hover{
+  opacity: 1;
+  transform: translate(-50%, -40%);
 }
 
 
@@ -117,7 +169,7 @@ h2{
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
   justify-content: space-evenly;
   
 
@@ -127,8 +179,8 @@ h2{
 
 .box1 {
     position: absolute;
-    width: 10cm;
-    height: 10cm;
+    width: 15cm;
+    height: 15cm;
 	  background-size: cover;
 	  background-repeat: no-repeat;
     margin: 0px;
@@ -140,8 +192,8 @@ h2{
 
 .box2 {
   position: absolute;
-  width: 10cm;
-  height: 12cm;
+  width: 15cm;
+  height: 18cm;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0px;
@@ -152,8 +204,8 @@ h2{
 
 .box3 {
   position: absolute;
-  width: 10cm;
-  height: 15cm;
+  width: 15cm;
+  height: 21cm;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0px;
@@ -165,8 +217,8 @@ h2{
 
 .box4 {
   position: absolute;
-  width: 10cm;
-  height: 12cm;
+  width: 15cm;
+  height: 18cm;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0px;
@@ -177,9 +229,8 @@ h2{
 
 .box5 {
   
-  width: 10cm;
-  height: 10cm;
-
+  width: 15cm;
+  height: 15cm;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0px;
@@ -228,7 +279,7 @@ h2{
 
 /* Stil für den Titel (h2) */
 .box1 h2, .box2 h2, .box3 h2, .box4 h2, .box5 h2 {
-  top: 20%; /* Positioniere den Titel etwas höher */
+  top: 50%; /* Positioniere den Titel etwas höher */
   font-size: 50px; /* Passe die Schriftgröße an */
   font-weight: bold; /* Mach den Titel fett */
 }
@@ -236,7 +287,7 @@ h2{
 /* Stil für den Namen (h3) */
 .box1 h3, .box2 h3, .box3 h3, .box4 h3, .box5 h3 {
   top: 60%; /* Positioniere den Namen etwas tiefer */
-  font-size: 16px; /* Kleinere Schrift für den Namen */
+  font-size: 23px; /* Kleinere Schrift für den Namen */
   font-weight: normal; /* Name bleibt regulär */
 }
 
@@ -269,3 +320,38 @@ font-family: SangBleuEmpire;
 font-size: 15pt;
 }
 
+.reload-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 6;
+}
+
+/* Pfeil-Symbol */
+.reload-button::before {
+  content: "↻";
+  font-size: 38px;
+  color: white;
+}
+
+/* Hover-Effekt */
+.reload-button:hover {
+  transform: scale(1.1);
+  background-color: #333;
+}
+
+.sortable-ghost {
+  opacity: 0.5;
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+}
