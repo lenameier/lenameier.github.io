@@ -21,7 +21,10 @@ html, body {
   }
 
 
+
+
 .normal h1{
+  position: fixed;
   font-size: 78pt;
   margin: 0px;
   color: black;
@@ -50,7 +53,7 @@ html, body {
 
 
 h1{
-  position: fixed;
+  position:absolute;
   font-size: 116pt;
   margin-left: 35px;
   margin-top: 0px;
@@ -59,9 +62,17 @@ h1{
 }
 
 h2{
-  /* beschreibungstext auf der Startseite und den Subpages */
+  /* beschreibungstext auf der Startseite */
   font-size: 18pt;
-  margin: 0px;
+  margin-top: 0px;
+  color: black;
+  font-family: 'Zodiak-Light';
+
+}
+
+.pitch{
+
+  margin-top: 140px;
   color: black;
   font-family: 'Zodiak-Light';
 
@@ -76,15 +87,9 @@ h3{
 
 }
 
-
-.pitch{
-  color: rgb(193, 193, 193);
-  margin-left: -200px;
-  margin-top: 300px;
-  font-size: 28pt;
-  font-family: ClashDisplay-Medium;
-  justify-content: center;
-  
+.centered-heading{
+  display: block;
+  position: relative;
 }
 
 .title{
@@ -142,15 +147,15 @@ h3{
 
 .item{
   border: solid;
-  border-width: 6px;
-  border-color: #f7f7f7;
+  border-width: 2px;
+  border-color: #c8c8c8;
   width: 750px;
   height: 750px;
 }
 
 .item-1{
   border: solid;
-  border-width: 6px;
+  border-width: 2px;
   border-color: #ffffff;
   width: 750px;
   height: 750px;
@@ -293,32 +298,43 @@ h3{
 
 
 .post {
-width: 1080px;
-height: 3000px;
-position: absolute;
+width: 100vw;
+height: 100vh;
+position: relative;
+overflow: scroll;
 }
 
+header > h1{
+  position: relative;
+  display: block;
+  z-index: 1;
+}
 
 .image-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  margin-top: 1fr;
+  z-index: 0;
+}
+
+p{
+  /* beschreibungstext auf den Subpages */
+  font-size: 18pt;
+  margin: 0px;
+  color: black;
+  font-family: 'Zodiak-Light';
+
 }
 
 img{
-
-  width: 200px;
+  width:300px;
   height: auto;
-  
-
 }
 
-.info{
-display: block;
-font-family: SangBleuEmpire;
-font-size: 15pt;
-}
+
+
 
 .reload-button {
   position: fixed;
@@ -355,3 +371,4 @@ font-size: 15pt;
   background: #f0f0f0;
   border: 2px dashed #ccc;
 }
+
