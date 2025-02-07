@@ -8,13 +8,11 @@
 	<title>Körperbilder </title>
 </head>
 
-
 <body>
-   
-    <div>
 
-            <main>
-                <div class="scroll-container">
+    <div>
+        <main>
+            <div class="scroll-container">
 <div class="centered-heading">
    <h1 id="headline">
   <span class="normal">Körper:</span>
@@ -23,14 +21,7 @@
   </span>
 </h1>
 </div>
-<div class="box-container">
-    <div class="item"></div>
-    <div class="item"><h2 class="pitch">Eine Plattform </br> zu Projekten über Körperbilder</h2></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item item-1"><h2>Diese Plattform befasst sich intensiv mit der Stigmatisierung von Körperbildern. Im Mittelpunkt stehen Themen wie Gewichtsstörungen, die Wahrnehmung und das Wohlbefinden im eigenen Körper, der Umgang mit Essstörungen sowie der Einfluss von Werbung und Social Media auf unser Selbstbild. Dabei geht es darum, gesellschaftliche Normen zu hinterfragen und die Erfahrungen von Menschen sichtbar zu machen, die aus dem Rahmen fallen. Auf der Plattform werden künstlerische und kritische Projekte präsentiert, die diese Themen beleuchten und damit verbundene Gefühle und Perspektiven zum Ausdruck bringen. Sie bietet zudem eine Möglichkeit für Austausch und Kontaktaufnahme, um einen Dialog über diese wichtigen Fragestellungen anzustoßen.</h2></div>
+<!-- <div class="box-container">
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -44,7 +35,53 @@
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
-</div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    
+
+</div> -->
+<script>
+    const items = document.querySelectorAll('.item');
+    let scrollTimeout;
+
+    // Funktion: Quadrate sanft buffen
+    function applySoftBuffEffect() {
+      items.forEach(item => {
+        // Berechnung der sanften Bewegung
+        const randomX = Math.random() * 10 - 5; // Verschiebung von -5px bis 5px
+        const randomY = Math.random() * 10 - 5;
+
+        // Anwenden der sanften Transformation
+        item.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      });
+    }
+
+    // Funktion: Quadrate in die ursprüngliche Position zurücksetzen
+    function resetPosition() {
+      items.forEach(item => {
+        item.style.transform = 'translate(0, 0)';
+      });
+    }
+
+    // Scroll-Event-Listener
+    window.addEventListener('scroll', () => {
+      // Quadrate während des Scrollens sanft buffen
+      applySoftBuffEffect();
+
+      // Wenn das Scrollen stoppt, zurücksetzen
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        resetPosition();
+      }, 300); // Nach 300ms ohne Scrollen zurücksetzen
+    });
+  </script>
+<h2 class="pitch">Eine Plattform </br> zu Projekten über Körperbilder</h2>
+<h2>Diese Plattform befasst sich intensiv mit der Stigmatisierung von Körperbildern. Im Mittelpunkt stehen Themen wie Gewichtsstörungen, die Wahrnehmung und das Wohlbefinden im eigenen Körper, der Umgang mit Essstörungen sowie der Einfluss von Werbung und Social Media auf unser Selbstbild. Dabei geht es darum, gesellschaftliche Normen zu hinterfragen und die Erfahrungen von Menschen sichtbar zu machen, die aus dem Rahmen fallen. Auf der Plattform werden künstlerische und kritische Projekte präsentiert, die diese Themen beleuchten und damit verbundene Gefühle und Perspektiven zum Ausdruck bringen. Sie bietet zudem eine Möglichkeit für Austausch und Kontaktaufnahme, um einen Dialog über diese wichtigen Fragestellungen anzustoßen.</h2>
 <div class="text-grid">
 </div>
 <!-- Reload Button -->
@@ -154,13 +191,58 @@
       location.reload();
     }
   </script>
-            </main>
-
+        </main>
     </div>
 
+    <button id="toggleButton">
+        <div class="play-icon"></div> <!-- Default Symbol Play (weiße Dreieck) -->
+    </button>
 
-      
+    <script>
+// Variablen
+let isActive = true; // Zeigt an, ob die Mausbewegung aktiv ist
+const button = document.getElementById("toggleButton");
+const playIcon = '<div class="play-icon"></div>';
+const stopIcon = '<div class="stop-icon"><div></div><div></div></div>';
+
+// Funktion, die bei der Mausbewegung ausgeführt wird
+function updateGridSize(event) {
+    if (!isActive) return; // Wenn die Mausbewegung deaktiviert ist, tue nichts
+
+    // Breite der Seite und Mausposition
+    const windowWidth = window.innerWidth;
+    const mouseX = event.clientX;
+
+    // Berechnung des Bereichs der Mausbewegung (nur horizontal)
+    const maxMovement = windowWidth;
+    const movement = Math.min(mouseX, maxMovement);
+
+    // Variiere die Gittergröße nur leicht (zwischen 10px und 60px)
+    const gridSize = 20 + (movement / maxMovement) * 400; // Gittergröße variiert von 10px bis 60px
+
+    // Setze den Wert für die Gittergröße
+    document.documentElement.style.setProperty("--grid-size", gridSize + "px");
+}
+
+// Event-Listener für Mausbewegung
+document.addEventListener("mousemove", updateGridSize);
+
+// Event-Listener für Button (Stop/Play)
+button.addEventListener("click", function() {
+    // Umschalten des Status (aktiv / nicht aktiv)
+    isActive = !isActive;
+
+    // Symbol umschalten: Play <-> Stop
+    button.innerHTML = isActive ? playIcon : stopIcon;
+
+    // Event-Listener für Mausbewegung aktivieren/deaktivieren
+    if (isActive) {
+        document.addEventListener("mousemove", updateGridSize);
+    } else {
+        document.removeEventListener("mousemove", updateGridSize);
+    }
+});
+    </script>
+
 </body>
-
-
 </html>

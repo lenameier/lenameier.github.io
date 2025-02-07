@@ -1,13 +1,66 @@
 
-html, body {
-   
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: scrcoll;
 
+
+/* Hintergrund-Gitter */
+body {
+  margin: 0;
+  min-height: 200vh; /* Damit man scrollen kann */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  transition: background-size 0.1s ease-out; /* Für sanfte Anpassung */
 }
+
+:root {
+  --grid-size: 100px;
+}
+
+
+/* Button-Styling */
+#toggleButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  margin-top: 1030px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  z-index: 12;
+}
+
+#toggleButton:hover {
+  background-color: #333;
+}
+
+/* Styling für das Play-Symbol (weiße Dreieck) */
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 15px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* Styling für das Stop-Symbol (zwei weiße Balken) */
+.stop-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 20px;
+}
+
+.stop-icon div {
+  width: 7px;
+  height: 20px;
+  background-color: white;
+}
+
 
 .scroll-container {
     position: absolute;
@@ -15,12 +68,22 @@ html, body {
     width: 180vw;
     height: 240vh; 
     overflow: auto; 
-    background: rgb(255, 255, 255);
     margin: 10px;
     
   }
+  
 
 
+  .grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-image: none; /* Wird durch JS geändert */
+}
 
 
 .normal h1{
@@ -53,7 +116,7 @@ html, body {
 
 
 h1{
-  position:absolute;
+  position: fixed;
   font-size: 116pt;
   margin-left: 35px;
   margin-top: 0px;
@@ -64,17 +127,25 @@ h1{
 h2{
   /* beschreibungstext auf der Startseite */
   font-size: 18pt;
-  margin-top: 0px;
+  margin: 10px;
   color: black;
-  font-family: 'Zodiak-Light';
+  font-family: 'Sentient';
+  font-variation-settings: 'wght' 300;
+  width: 900px;
+  height: 500px;
+  margin-top: 500px;
+  margin-left: 1000px;
+  position: absolute;
 
 }
 
 .pitch{
 
-  margin-top: 140px;
+  margin-top: 160px;
+  margin-left: 45px;
   color: black;
-  font-family: 'Zodiak-Light';
+  font-family: 'Sentient';
+  font-variation-settings: 'wght' 300;
 
 }
 
@@ -86,6 +157,8 @@ h3{
   font-family: 'ClashDisplay-Medium';
 
 }
+
+
 
 .centered-heading{
   display: block;
@@ -129,36 +202,27 @@ h3{
   z-index: 2;
 }
 
-.box-container{
-  position: absolute;
-  display: flex;
-  margin: 10px;
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: baseline;
-  gap: 15px;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  z-index: 0;
-
+.box-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
 }
 
-.item{
-  border: solid;
-  border-width: 2px;
-  border-color: #c8c8c8;
-  width: 750px;
-  height: 750px;
+.item {
+  width: 600px;
+  height: 600px;
+  background-color: #ffffff;
+  border: solid 2px #cccccc;
+  transition: border-color 0.3s ease, border-opacity 0.3s ease;
+  transition: transform 0.5s ease; /* Weicher Übergang */
 }
 
-.item-1{
-  border: solid;
-  border-width: 2px;
-  border-color: #ffffff;
-  width: 750px;
-  height: 750px;
+.item:hover {
+  box-shadow: 0 0 0 5px rgba(0, 0, 255, 0); /* Macht den Rand unsichtbar beim Hover */
 }
 
 .item-1:hover{
@@ -184,8 +248,8 @@ h3{
 
 .box1 {
     position: absolute;
-    width: 15cm;
-    height: 15cm;
+    width: 20cm;
+    height: 20cm;
 	  background-size: cover;
 	  background-repeat: no-repeat;
     margin: 0px;
@@ -197,8 +261,8 @@ h3{
 
 .box2 {
   position: absolute;
-  width: 15cm;
-  height: 18cm;
+  width: 20cm;
+  height: 25cm;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0px;
@@ -320,16 +384,23 @@ header > h1{
 }
 
 p{
-  /* beschreibungstext auf den Subpages */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   font-size: 18pt;
   margin: 0px;
   color: black;
-  font-family: 'Zodiak-Light';
+  font-family: 'Sentient';
+  font-variation-settings: 'wght' 300;
+  display: flex;
+  gap: 10px;
+  width: 400px;
+
 
 }
 
 img{
-  width:300px;
+  width:500px;
   height: auto;
 }
 
